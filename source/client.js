@@ -1,4 +1,6 @@
-import data from "./sample.json";
-//const data = require('./sample.json');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './components/app';
+import data from "./data.json";
 
-document.body.innerText = data.name;
+ReactDOM.render(<App />, document.getElementById('react'))
