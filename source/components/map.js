@@ -6,7 +6,8 @@ export default class Map extends Component {
             point = {x:e.offsetX, y:e.offsetY},
             latSize = img.height/180,
             lonSize = img.width/360,
-            lat, lon;
+            lat, lon,
+            r = 1;
 
         //console.log(point);
 
@@ -21,6 +22,13 @@ export default class Map extends Component {
         lon = (point.x - (img.width/2)) / lonSize;
 
         console.log(lat, lon);
+   
+        var ws = `http://api.geonames.org/citiesJSON?
+            formatted=true&north=${lat-r}&
+            south=${lat-r}&east=${lon+r}&west=${lon-r}&
+            lang=en&username=geek&style=full`;
+        
+            console.log(ws);    
     }
     
     render() {
